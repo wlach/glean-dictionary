@@ -1,4 +1,5 @@
 <script>
+  import Footer from "../components/Footer.svelte";
   import { getPingData } from "../state/api";
 
   export let params;
@@ -10,3 +11,5 @@
   <p>{ping.description}</p>
   <p><a href={`/apps/${params.app}/tables/${ping.name}`}>BigQuery table</a></p>
 {/await}
+
+<Footer />
