@@ -1,6 +1,7 @@
 <script>
   import SchemaViewer from "../components/SchemaViewer.svelte";
   import { fetchJSON, getTableData } from "../state/api";
+  import Footer from "../components/Footer.svelte";
 
   export let params;
   const pingDataPromise = getTableData(params.app, params.ping).then(
@@ -48,3 +49,5 @@
 
   <SchemaViewer app={params.app} nodes={data.schema} />
 {/await}
+
+<Footer />
