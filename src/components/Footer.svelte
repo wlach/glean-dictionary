@@ -10,7 +10,6 @@
     width: var(--main-content-width);
     margin: var(--space-2x) auto;
     align-items: center;
-    margin-top: auto !important;
   }
   .project-links {
     list-style: none;
@@ -44,8 +43,8 @@
       <a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a>
     </li>
     <li>
-      <a href="https://app.slack.com/client/T027LFU12/CB1EQ437S">Slack</a>
+      <a href="https://chat.mozilla.org">Matrix</a>
     </li>
-    <li><a href="https://github.com/mozilla/glam/">GitHub</a></li>
+    <li><a href="https://github.com/mozilla/glean-dictionary">GitHub</a></li>
   </ul>
 </footer>
