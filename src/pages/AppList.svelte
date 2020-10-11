@@ -1,4 +1,5 @@
 <script>
+  import Footer from "../components/Footer.svelte";
   import FilterInput from "../components/FilterInput.svelte";
 
   const URL = "data/apps.json";
@@ -26,3 +27,4 @@
     </p>
   {/each}
 {/if}
+<Footer />
