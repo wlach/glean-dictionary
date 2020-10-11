@@ -10,6 +10,7 @@
     width: var(--main-content-width);
     margin: var(--space-2x) auto;
     align-items: center;
+    margin-top: auto !important;
   }
   .project-links {
     list-style: none;
