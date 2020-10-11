@@ -1,5 +1,5 @@
 <script>
-  import MozillaLogo from './icons/MozillaLogo.svelte';
+  import MozillaLogo from "./icons/MozillaLogo.svelte";
 </script>
 
 <style>
@@ -43,9 +43,7 @@
     <li>
       <a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a>
     </li>
-    <li>
-      <a href="https://chat.mozilla.org">Matrix</a>
-    </li>
+    <li><a href="https://chat.mozilla.org">Matrix</a></li>
     <li><a href="https://github.com/mozilla/glean-dictionary">GitHub</a></li>
   </ul>
 </footer>
