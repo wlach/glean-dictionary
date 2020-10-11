@@ -31,6 +31,11 @@
   .brand {
     @apply text-gray-100;
   }
+  .parent-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 </style>
 
 <Tailwindcss />
@@ -43,6 +48,6 @@
   </div>
 </nav>
 
-<div class="container py-4 mx-auto">
+<div class="container py-4 mx-auto parent-container">
   <svelte:component this={component} bind:params />
 </div>
