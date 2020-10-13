@@ -1,6 +1,7 @@
 <script>
   import page from "page";
   import Tailwindcss from "./Tailwindcss.svelte";
+  import Footer from "./components/Footer.svelte";
 
   // Pages
   import AppList from "./pages/AppList.svelte";
@@ -31,11 +32,6 @@
   .brand {
     @apply text-gray-100;
   }
-  .parent-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
 </style>
 
 <Tailwindcss />
@@ -48,6 +44,8 @@
   </div>
 </nav>
 
-<div class="container py-4 mx-auto parent-container">
+<div class="container py-4 mx-auto">
   <svelte:component this={component} bind:params />
 </div>
+
+<Footer />
