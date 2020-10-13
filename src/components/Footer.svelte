@@ -1,6 +1,5 @@
 <script>
   import MozillaLogo from "./icons/MozillaLogo.svelte";
-
 </script>
 
 <style>

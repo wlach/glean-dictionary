@@ -1,5 +1,4 @@
 <script>
-  import Footer from "../components/Footer.svelte";
   import { getMetricData } from "../state/api";
 
   export let params;
@@ -10,5 +9,3 @@
   <h1>{metric.name}</h1>
   <p>{metric.description}</p>
 {/await}
-
-<Footer />

@@ -1,6 +1,4 @@
 <script>
-  import Footer from "../components/Footer.svelte";
-
   export let params;
   const URL = `data/${params.app}/index.json`;
   let app;
@@ -34,5 +32,3 @@
     {/each}
   </ul>
 {/if}
-
-<Footer />
