@@ -76,6 +76,9 @@
   page("*", (ctx, next) => {
     ga("set", "page", ctx.page.current);
     ga("send", "pageview");
+    window.location.replace(
+      `https://dictionary.telemetry.mozilla.org${ctx.page.current}`
+    );
     next();
   });
   page("/", setComponent(AppList));

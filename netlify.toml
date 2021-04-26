@@ -13,3 +13,9 @@ publish = "public"
 [context.production]
   [context.production.environment]
   CONTEXT = "production"
+
+[[redirects]]
+  from = "https://glean-dictionary.netlify.app"
+  to = "https://dictionary.telemetry.mozilla.org"
+  status = 301
+  force = true
