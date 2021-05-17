@@ -9,7 +9,7 @@ import requests
 import stringcase
 
 OUTPUT_DIRECTORY = os.path.join("public", "data")
-ANNOTATIONS_URL = "https://mozilla.github.io/glean-annotations/api.json"
+ANNOTATIONS_URL = "https://deploy-preview-12--glean-annotations.netlify.app/api.json"
 
 
 def _serialize_sets(obj):
@@ -133,12 +133,22 @@ for (app_name, app_group) in app_groups.items():
             if metric.identifier not in metric_identifiers_seen:
                 metric_identifiers_seen.add(metric.identifier)
 
+                # read the annotation, if any
+                annotation = (
+                    annotations_index.get(app_name, {})
+                    .get("annotations", {})
+                    .get("metrics", {})
+                    .get(metric.identifier)
+                )
+
                 base_definition = {
                     "name": metric.identifier,
                     "description": metric.description,
                     "type": metric.definition["type"],
                     "expires": metric.definition["expires"],
                 }
+                if annotation and annotation.get("labels"):
+                    base_definition.update({"labels": annotation["labels"]})
                 if metric.definition["origin"] != app_name:
                     base_definition.update({"origin": metric.definition["origin"]})
 

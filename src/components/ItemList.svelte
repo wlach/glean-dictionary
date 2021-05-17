@@ -38,9 +38,12 @@
     const originMatch = (item) =>
       item.origin && item.origin.includes(search.toLowerCase());
 
+    const labelMatch = (item) => item.labels && item.labels.includes(search);
+
     // filter on match either on name or on origin
     filteredItems = items.filter(
-      (item) => item.name.includes(search) || originMatch(item)
+      (item) =>
+        item.name.includes(search) || originMatch(item) || labelMatch(item)
     );
 
     // also filter out expired items (if we're not showing expired)
@@ -59,8 +62,8 @@
         : [];
   }
 
-  const originClicked = (origin) => {
-    $pageState = { ...$pageState, search: origin };
+  const updateSearch = (search) => {
+    $pageState = { ...$pageState, search };
     // when the user clicks on an origin (library name), we want to persist a new state
     updateURLState(true);
   };
@@ -162,7 +165,16 @@
                     message={item.origin}
                     bgColor="#4a5568"
                     clickable
-                    on:click={originClicked(item.origin)} />
+                    on:click={updateSearch(item.origin)} />
+                {/if}
+                {#if item.labels}
+                  {#each item.labels as label}
+                    <Pill
+                      message={label}
+                      bgColor="#4a5568"
+                      clickable
+                      on:click={updateSearch(label)} />
+                  {/each}
                 {/if}
                 {#if isExpired(item.expires)}
                   <Pill message="Expired" bgColor="#4a5568" />
